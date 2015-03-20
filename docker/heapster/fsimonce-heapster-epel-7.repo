@@ -1,0 +1,7 @@
+[fsimonce-heapster]
+name=Copr repo for heapster owned by fsimonce
+baseurl=https://copr-be.cloud.fedoraproject.org/results/fsimonce/heapster/epel-7-$basearch/
+skip_if_unavailable=True
+gpgcheck=1
+gpgkey=https://copr-be.cloud.fedoraproject.org/results/fsimonce/heapster/pubkey.gpg
+enabled=1

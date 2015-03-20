@@ -1,0 +1,38 @@
+[Unit]
+Description=Heapster
+
+[Service]
+EnvironmentFile=/etc/sysconfig/heapster
+ExecStart=/usr/bin/heapster \
+	--alsologtostderr=${HEAPSTER_ALSOLOGTOSTDERR} \
+	--bq_account=${HEAPSTER_BQ_ACCOUNT} \
+	--bq_credentials_file=${HEAPSTER_BQ_CREDENTIALS_FILE} \
+	--bq_id=${HEAPSTER_BQ_ID} \
+	--bq_project_id=${HEAPSTER_BQ_PROJECT_ID} \
+	--bq_secret=${HEAPSTER_BQ_SECRET} \
+	--cadvisor_port=${HEAPSTER_CADVISOR_PORT} \
+	--coreos=${HEAPSTER_COREOS} \
+	--external_hosts_file=${HEAPSTER_EXTERNAL_HOSTS_FILE} \
+	--fleet_endpoints=${HEAPSTER_FLEET_ENDPOINTS} \
+	--kubelet_port=${HEAPSTER_KUBELET_PORT} \
+	--kubernetes_insecure=${HEAPSTER_KUBERNETES_INSECURE} \
+	--kubernetes_master=${HEAPSTER_KUBERNETES_MASTER} \
+	--listen_ip=${HEAPSTER_LISTEN_IP} \
+	--log_backtrace_at=${HEAPSTER_LOG_BACKTRACE_AT} \
+	--log_dir=${HEAPSTER_LOG_DIR} \
+	--logtostderr=${HEAPSTER_LOGTOSTDERR} \
+	--max_procs=${HEAPSTER_MAX_PROCS} \
+	--poll_duration=${HEAPSTER_POLL_DURATION} \
+	--port=${HEAPSTER_PORT} \
+	--sink=${HEAPSTER_SINK} \
+	--sink_influxdb_host=${HEAPSTER_SINK_INFLUXDB_HOST} \
+	--sink_influxdb_name=${HEAPSTER_SINK_INFLUXDB_NAME} \
+	--sink_influxdb_no_columns=${HEAPSTER_SINK_INFLUXDB_NO_COLUMNS} \
+	--sink_influxdb_password=${HEAPSTER_SINK_INFLUXDB_PASSWORD} \
+	--sink_influxdb_username=${HEAPSTER_SINK_INFLUXDB_USERNAME} \
+	--sink_memory_ttl=${HEAPSTER_SINK_MEMORY_TTL} \
+	--standalone=${HEAPSTER_STANDALONE} \
+	--stderrthreshold=${HEAPSTER_STDERRTHRESHOLD}
+
+[Install]
+WantedBy=multi-user.target
